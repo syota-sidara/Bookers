@@ -3,16 +3,16 @@
 <%= form_for(@book) do |f| %>
 
  <h4>Title</h4>
- <div><%= f.text_field :title %></div>
+ <div><%= f.text_field :title, class: "book_title" %></div>
 
  <h4>Body</h4>
- <div><%= f.text_area :body %></div>
+ <div><%= f.text_area :body, class: "book_body" %></div>
 
  <div><%= f.submit 'Update Book' %></div>
 
-<%= link_to 'Show' ,book_path %>
+<%= link_to 'Show' ,book_path(@book.id), class: "show_#{@book.id}" %>
   |
-<%= link_to 'Back' ,books_path %>
+<%= link_to 'Back' ,books_path(@book.id), class: "back" %>
 
 <% end %>
 
